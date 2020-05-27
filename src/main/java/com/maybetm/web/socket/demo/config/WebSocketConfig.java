@@ -1,4 +1,4 @@
-package com.example.websocketdemo.config;
+package com.maybetm.web.socket.demo.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
@@ -20,11 +20,9 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     public void configureMessageBroker(MessageBrokerRegistry registry) {
         registry.setApplicationDestinationPrefixes("/app");
         registry.enableSimpleBroker("/topic");   // Enables a simple in-memory broker
-
-
-        //   Use this for enabling a Full featured broker like RabbitMQ
-
         /*
+        Use this for enabling a Full featured broker like RabbitMQ
+
         registry.enableStompBrokerRelay("/topic")
                 .setRelayHost("localhost")
                 .setRelayPort(61613)
